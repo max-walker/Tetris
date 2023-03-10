@@ -60,7 +60,7 @@ void Item::addPoints(const PointList& points)
 {
 	for (int i = 0; i < points.size(); ++i)
 	{
-		if (m_points.contains(points[i]))
+		if (!m_points.contains(points[i]))
 		{
 			m_points.append(points[i]);
 		}

@@ -94,6 +94,7 @@ void GameArea::KeyPressed(int key)
 		y = 1;
 		break;
 	case Qt::Key_Space:
+	{
 		while (1)
 		{
 			m_curItem.move(0, 1);
@@ -102,8 +103,9 @@ void GameArea::KeyPressed(int key)
 				m_curItem.move(0, -1);
 				break;
 			}
-			return;
 		}
+		return;
+	}
 	case Qt::Key_Return:
 	case Qt::Key_Enter:
 		m_paused = !m_paused;
@@ -237,7 +239,7 @@ void GameArea::paintEvent(QPaintEvent* event)
 		painter.setFont(font);
 		painter.setBrush(Qt::NoBrush);
 		painter.setPen(QPen(QColor("#FF3333"), 1));
-		painter.drawText(rect(), Qt::AlignCenter, "ÔÝÍ£");
+		painter.drawText(rect(), Qt::AlignCenter, "Pause");
 	}
 	update();
 }
